@@ -19,6 +19,27 @@
     <Filter Include="Source Files\percolation">
       <UniqueIdentifier>{becdb24c-5212-4d67-8e1b-a14e9e6afc5a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\graph">
+      <UniqueIdentifier>{a39e4969-dbfb-4daa-ac34-9cd569d32b4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\graph">
+      <UniqueIdentifier>{57424251-7ec0-4a91-9e41-979acd00d3a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sort">
+      <UniqueIdentifier>{1aec43ed-874f-4c0a-a392-c53d95b87ec8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\container">
+      <UniqueIdentifier>{950282ba-cc13-4646-bb1f-ed784c9c4570}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\tree">
+      <UniqueIdentifier>{bca288a1-dba2-46e1-9f90-eeebeae9fddf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\memory">
+      <UniqueIdentifier>{3547c63d-7944-4414-98ce-e96f2b502cc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\container">
+      <UniqueIdentifier>{2bc8042c-aef4-4cca-ae82-b38265a15810}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abstract_uf.h">
@@ -42,6 +63,96 @@
     <ClInclude Include="weighed_union.h">
       <Filter>Header Files\percolation</Filter>
     </ClInclude>
+    <ClInclude Include="undirected_graph.h">
+      <Filter>Header Files\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="bfs.h">
+      <Filter>Header Files\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="dfs.h">
+      <Filter>Header Files\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="stack.h">
+      <Filter>Header Files\container</Filter>
+    </ClInclude>
+    <ClInclude Include="directed_graph.h">
+      <Filter>Header Files\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="queue.h">
+      <Filter>Header Files\container</Filter>
+    </ClInclude>
+    <ClInclude Include="kd_tree.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="num_vector.h">
+      <Filter>Header Files\container</Filter>
+    </ClInclude>
+    <ClInclude Include="stack_l.h">
+      <Filter>Header Files\container</Filter>
+    </ClInclude>
+    <ClInclude Include="queue_l.h">
+      <Filter>Header Files\container</Filter>
+    </ClInclude>
+    <ClInclude Include="num_matrix.h">
+      <Filter>Header Files\container</Filter>
+    </ClInclude>
+    <ClInclude Include="smart_ptr.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="container_test.h">
+      <Filter>Header Files\container</Filter>
+    </ClInclude>
+    <ClInclude Include="quick_sort.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="merge_sort.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="selection_sort.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="insertion_sort.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="heap_sort.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="quick_median.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="k_largest.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="k_sorted.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="red_black_tree.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="priority_queue.h">
+      <Filter>Header Files\container</Filter>
+    </ClInclude>
+    <ClInclude Include="merge_sorted_array.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="binary_search_tree.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="2_3_tree.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="tries.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="b_tree.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="van_emde_boas.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="fibonacci_heaps.h">
+      <Filter>Header Files\tree</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="perco_stat.cpp">
@@ -61,6 +172,15 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="undirected_graph.cpp">
+      <Filter>Source Files\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="directed_graph.cpp">
+      <Filter>Source Files\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="container_test.cpp">
+      <Filter>Source Files\container</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

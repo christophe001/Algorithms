@@ -139,19 +139,52 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="2_3_tree.h" />
     <ClInclude Include="abstract_uf.h" />
+    <ClInclude Include="bfs.h" />
+    <ClInclude Include="binary_search_tree.h" />
+    <ClInclude Include="b_tree.h" />
+    <ClInclude Include="container_test.h" />
+    <ClInclude Include="dfs.h" />
+    <ClInclude Include="directed_graph.h" />
+    <ClInclude Include="fibonacci_heaps.h" />
+    <ClInclude Include="heap_sort.h" />
+    <ClInclude Include="insertion_sort.h" />
+    <ClInclude Include="kd_tree.h" />
+    <ClInclude Include="k_largest.h" />
+    <ClInclude Include="k_sorted.h" />
+    <ClInclude Include="merge_sort.h" />
+    <ClInclude Include="merge_sorted_array.h" />
+    <ClInclude Include="num_matrix.h" />
+    <ClInclude Include="num_vector.h" />
     <ClInclude Include="percolate.h" />
     <ClInclude Include="perco_ini.h" />
     <ClInclude Include="perco_stat.h" />
+    <ClInclude Include="priority_queue.h" />
+    <ClInclude Include="queue.h" />
+    <ClInclude Include="queue_l.h" />
+    <ClInclude Include="quick_median.h" />
+    <ClInclude Include="quick_sort.h" />
     <ClInclude Include="quick_union.h" />
+    <ClInclude Include="red_black_tree.h" />
+    <ClInclude Include="selection_sort.h" />
+    <ClInclude Include="smart_ptr.h" />
+    <ClInclude Include="stack.h" />
+    <ClInclude Include="stack_l.h" />
+    <ClInclude Include="tries.h" />
+    <ClInclude Include="undirected_graph.h" />
     <ClInclude Include="union_find.h" />
+    <ClInclude Include="van_emde_boas.h" />
     <ClInclude Include="weighed_union.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="container_test.cpp" />
+    <ClCompile Include="directed_graph.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="percolate.cpp" />
     <ClCompile Include="perco_stat.cpp" />
     <ClCompile Include="quick_union.cpp" />
+    <ClCompile Include="undirected_graph.cpp" />
     <ClCompile Include="union_find.cpp" />
     <ClCompile Include="weighted_union.cpp" />
   </ItemGroup>
