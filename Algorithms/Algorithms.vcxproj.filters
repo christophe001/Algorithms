@@ -153,6 +153,9 @@
     <ClInclude Include="fibonacci_heaps.h">
       <Filter>Header Files\tree</Filter>
     </ClInclude>
+    <ClInclude Include="graph_test.h">
+      <Filter>Header Files\graph</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="perco_stat.cpp">
@@ -181,6 +184,9 @@
     </ClCompile>
     <ClCompile Include="container_test.cpp">
       <Filter>Source Files\container</Filter>
+    </ClCompile>
+    <ClCompile Include="graph_test.cpp">
+      <Filter>Source Files\graph</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

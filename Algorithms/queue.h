@@ -46,24 +46,30 @@ namespace algo {
 			return;
 		else if (m_size > std::numeric_limits<_Size>::max() - m_size / 2)
 			resize(m_size + 1);
-		else resize(m_size + (m_size / 2));
+		else { 
+			_Size new_size = m_size / 2 > 1 ? m_size + m_size / 2 : m_size + 1;
+			resize(new_size);
+		};
 	}
 
 	template<class _Type>
 	inline void Queue<_Type>::resize(_Size new_size) {
 		if (!isEmpty()) {
 			m_size = new_size;
+			_Size s = size();
 			_Type* new_vec = new _Type[new_size];
 			for (_Size i = m_front; i < m_back; i++)
 				new_vec[i - m_front] = m_arr[i];
 			free();
+			m_front = 0;
+			m_back = s;
 			m_arr = new_vec;
 		}
 	}
 
 	template<class _Type>
 	inline void Queue<_Type>::shift() {
-		if (size() > 5 && size() < m_size / 2) {
+		if (size() > 5 && size() < m_size / 4) {
 			_Size new_size = m_size / 2 > 5 ? m_size / 2 : 5;
 			resize(new_size);
 		}
@@ -111,7 +117,7 @@ namespace algo {
 			m_back = queue.m_back;
 			m_size = queue.m_size;
 			m_arr = new _Type[m_size];
-			for (_Size i = m_front; i != m_back; i++) {
+			for (_Size i = m_front; i < m_back; i++) {
 				m_arr[i] = queue.m_arr[i];
 			}
 		}

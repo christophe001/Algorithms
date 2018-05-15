@@ -1,6 +1,7 @@
 #include "undirected_graph.h"
 #include <assert.h>
-
+#include "queue.h"
+#include <queue>
 namespace algo {
 	Graph::Graph(int n) {
 		m_adjacency = std::vector<std::vector<int> >(n, std::vector<int>());
@@ -45,6 +46,12 @@ namespace algo {
 		}
 	}
 
+	void Graph::print() {
+		resetVisited();  
+		dfs(0, &Graph::printPath);
+		std::cout << std::endl;
+	}
+
 	void Graph::dfs(int i, action a) {
 		m_visited[i] = true;
 		std::vector<int> adj_i = m_adjacency[i];
@@ -79,5 +86,46 @@ namespace algo {
 			}
 		}
 		return s;
+	}
+
+	bool Graph::isBipartite() {
+		std::vector<int> colors(m_vertices, -1);
+		resetVisited();
+		for (int i = 0; i < m_vertices; i++) {
+			if (!m_visited[i]) {
+				m_visited[i] = true;
+				colors[i] = 1;
+				Queue<int> q;
+				q.enqueue(i);
+				while (!q.isEmpty()) {
+					int j = q.front();
+					q.dequeue();
+					for (auto c : adj(j)) {
+						if (c == j)
+							return false;
+						if (colors[c] == -1) {
+							colors[c] = 1 - colors[j];
+							m_visited[c] = true;
+							q.enqueue(c);
+						}
+						else if (colors[c] == colors[j])
+							return false;
+					}
+				}
+			}
+		}
+		return true;
+	}
+
+	int Graph::components() {
+		int components = 0;
+		resetVisited();
+		for (int i = 0; i < m_vertices; i++) {
+			if (!m_visited[i]) {
+				components++;
+				dfs(i);
+			}
+		}
+		return components;
 	}
 }

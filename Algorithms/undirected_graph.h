@@ -21,8 +21,10 @@ namespace algo {
 		void resetVisited();
 		typedef void(Graph::*action)(int i);
 		void printPath(int i) { std::cout << i << " "; }
-		void dfs(int i, action a);
-		void bfs(int i, action a);
+		void print();
+		void dfs(int i, action a = &doNothing);
+		void doNothing(int i) {}
+		void bfs(int i, action a = &doNothing);
 		~Graph() {}
 		void addEdge(int v, int e);
 		const int vertices() const { return m_vertices; }
@@ -30,8 +32,8 @@ namespace algo {
 		std::vector<int> adj(int i) const { return m_adjacency[i]; }
 		const int degree(int i) const { return m_degree[i]; }
 		std::string toString() const;
-		bool isBipartite() const;
-		int components() const;
+		bool isBipartite();
+		int components();
 	};
 }
 #endif // !_UNDIRECTED_GRAPH_

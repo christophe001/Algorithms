@@ -148,6 +148,7 @@
     <ClInclude Include="dfs.h" />
     <ClInclude Include="directed_graph.h" />
     <ClInclude Include="fibonacci_heaps.h" />
+    <ClInclude Include="graph_test.h" />
     <ClInclude Include="heap_sort.h" />
     <ClInclude Include="insertion_sort.h" />
     <ClInclude Include="kd_tree.h" />
@@ -180,6 +181,7 @@
   <ItemGroup>
     <ClCompile Include="container_test.cpp" />
     <ClCompile Include="directed_graph.cpp" />
+    <ClCompile Include="graph_test.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="percolate.cpp" />
     <ClCompile Include="perco_stat.cpp" />
