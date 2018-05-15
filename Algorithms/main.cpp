@@ -9,7 +9,7 @@ using namespace std;
 using namespace algo;
 int main(){
 	//PercoExperiment();
-	StackLTest();
+	QueueTest();
 
 	system("pause");
 }

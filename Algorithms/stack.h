@@ -51,14 +51,11 @@ namespace algo {
 	inline void Stack<_Type>::resize(_Size new_size) {
 		if (!isEmpty()) {
 			m_size = new_size;
-			_Type* new_vec = new _Type[m_cnt];
+			_Type* new_vec = new _Type[new_size];
 			for (_Size i = 0; i < m_cnt; i++)
 				new_vec[i] = m_arr[i];
 			free();
-			m_arr = new _Type[new_size];
-			for (_Size i = 0; i < m_cnt; i++)
-				m_arr[i] = new_vec[i];
-			delete[] new_vec;
+			m_arr = new_vec;
 		}
 	}
 

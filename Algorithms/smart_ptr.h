@@ -40,8 +40,6 @@ namespace memory {
 
 		constexpr _Base_Ptr() noexcept
 		:{}
-
-
 	};
 }
 

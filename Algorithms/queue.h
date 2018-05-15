@@ -52,19 +52,12 @@ namespace algo {
 	template<class _Type>
 	inline void Queue<_Type>::resize(_Size new_size) {
 		if (!isEmpty()) {
-			_Size sz = size();
-			_Type* new_vec = new _Type[sz];
+			m_size = new_size;
+			_Type* new_vec = new _Type[new_size];
 			for (_Size i = m_front; i < m_back; i++)
 				new_vec[i - m_front] = m_arr[i];
 			free();
-			m_size = new_size;
-			m_arr = new _Type[new_size];
-			for (_Size i = 0; i < sz; i++) {
-				m_arr[i] = new_vec[i];
-			}
-			m_front = 0;
-			m_back = sz;
-			delete[] new_vec;
+			m_arr = new_vec;
 		}
 	}
 
