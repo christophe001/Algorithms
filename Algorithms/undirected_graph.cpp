@@ -63,6 +63,21 @@ namespace algo {
 	}
 
 	void Graph::bfs(int i, action a) {
+		m_visited[i] = true;
+		(this->*a)(i);
+		Queue<int> q;
+		q.enqueue(i);
+		while (!q.isEmpty()) {
+			int j = q.front();
+			q.dequeue();
+			for (auto c : adj(j)) {
+				if (!m_visited[c]) {
+					q.enqueue(c);
+					m_visited[c] = true;
+					(this->*a)(c);
+				}
+			}
+		}
 
 	}
 

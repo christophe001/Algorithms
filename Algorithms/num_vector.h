@@ -190,6 +190,8 @@ namespace algo {
 
 		const double norm() const;
 
+		NumVector abs() const;
+
 		//===============================================================================
 		//! External functions
 		//===============================================================================
@@ -336,6 +338,14 @@ namespace algo {
 		for (size_t i = 0; i < _Size; i++)
 			res += val_[i] * val_[i];
 		return sqrt(res);
+	}
+
+	template<class _Ty, size_t _Size>
+	inline NumVector<_Ty, _Size> NumVector<_Ty, _Size>::abs() const {
+		NumVector<_Ty, _Size> vec(*this);
+		for (size_t i = 0; i < _Size; i++)
+			vec[i] = vec[i] > 0 ? vec[i] : -vec[i];
+		return vec;
 	}
 
 	//-------------------------------------------------------------------------------
