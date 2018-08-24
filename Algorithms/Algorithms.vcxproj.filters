@@ -156,6 +156,21 @@
     <ClInclude Include="graph_test.h">
       <Filter>Header Files\graph</Filter>
     </ClInclude>
+    <ClInclude Include="bubble_sort.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="merge_sort_bu.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="merge_sort_parallel.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="random_permutation.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="quick_select.h">
+      <Filter>Header Files\sort</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="perco_stat.cpp">

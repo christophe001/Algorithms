@@ -1,17 +1,18 @@
-#ifndef _ALGORITHM_MERGE_SORT_
-#define _ALGORITHM_MERGE_SORT_
+#ifndef _ALGORITHM_MERGE_SORT_PARALLEL_
+#define _ALGORITHM_MERGE_SORT_PARALLEL_
 
 #include <algorithm>
+#include <thread>
 #include <vector>
 namespace algo {
-	
-	class MergeSort {
+
+	class MergeSortP {
 	private:
-		MergeSort() {}
-		~MergeSort() {}
-		
+		MergeSortP() {}
+		~MergeSortP() {}
+
 		template<class _RandomAccessIter, class _Comparator, class _Elem>
-		static void merge(std::vector<_Elem>& arr, _RandomAccessIter first, 
+		static void merge(std::vector<_Elem>& arr, _RandomAccessIter first,
 			_Comparator comp, int p, int q, int r) {
 			int id = p;
 			auto it1 = first + p, it2 = first + q;
@@ -53,6 +54,7 @@ namespace algo {
 		template <class _RandomAccessIter, class _Comparator>
 		static void sort(_RandomAccessIter first, _RandomAccessIter last, _Comparator comp) {
 			typedef std::iterator_traits<_RandomAccessIter>::value_type Elem;
+			int num_threads = std::thread::hardware_concurrency();
 			int n = last - first;
 			std::vector<Elem> stack(n);
 			merge_sort(stack, first, comp, 0, n);
@@ -63,5 +65,6 @@ namespace algo {
 }
 
 #endif // !_MERGE_SORT_
+
 
 

@@ -89,6 +89,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -115,6 +116,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,6 +145,7 @@
     <ClInclude Include="abstract_uf.h" />
     <ClInclude Include="bfs.h" />
     <ClInclude Include="binary_search_tree.h" />
+    <ClInclude Include="bubble_sort.h" />
     <ClInclude Include="b_tree.h" />
     <ClInclude Include="container_test.h" />
     <ClInclude Include="dfs.h" />
@@ -156,6 +159,8 @@
     <ClInclude Include="k_sorted.h" />
     <ClInclude Include="merge_sort.h" />
     <ClInclude Include="merge_sorted_array.h" />
+    <ClInclude Include="merge_sort_bu.h" />
+    <ClInclude Include="merge_sort_parallel.h" />
     <ClInclude Include="num_matrix.h" />
     <ClInclude Include="num_vector.h" />
     <ClInclude Include="percolate.h" />
@@ -165,8 +170,10 @@
     <ClInclude Include="queue.h" />
     <ClInclude Include="queue_l.h" />
     <ClInclude Include="quick_median.h" />
+    <ClInclude Include="quick_select.h" />
     <ClInclude Include="quick_sort.h" />
     <ClInclude Include="quick_union.h" />
+    <ClInclude Include="random_permutation.h" />
     <ClInclude Include="red_black_tree.h" />
     <ClInclude Include="selection_sort.h" />
     <ClInclude Include="smart_ptr.h" />

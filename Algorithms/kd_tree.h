@@ -20,6 +20,7 @@ namespace algo {
 		bool contains(const Vec& point);
 		double distanceTo(const Vec& point);
 		Vec absDistanceVectorTo(const Vec& point);
+		double volume() const;
 	private:
 		Vec r_min, r_max;
 	};

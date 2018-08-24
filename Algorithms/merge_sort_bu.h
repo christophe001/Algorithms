@@ -1,18 +1,18 @@
-#ifndef _ALGORITHM_MERGE_SORT_
-#define _ALGORITHM_MERGE_SORT_
+#ifndef _ALGORITHM_MERGE_SORT_BU_
+#define _ALGORITHM_MERGE_SORT_BU_
 
 #include <algorithm>
 #include <vector>
+
 namespace algo {
-	
-	class MergeSort {
+	class MergeSortBU {
 	private:
-		MergeSort() {}
-		~MergeSort() {}
-		
-		template<class _RandomAccessIter, class _Comparator, class _Elem>
-		static void merge(std::vector<_Elem>& arr, _RandomAccessIter first, 
+		MergeSortBU() {}
+		~MergeSortBU() {}
+		template <class _RandomAccessIter, class _Comparator, class _Elem>
+		static void merge( std::vector<_Elem>& arr, _RandomAccessIter first,
 			_Comparator comp, int p, int q, int r) {
+			int left = q - p, right = r - q;
 			int id = p;
 			auto it1 = first + p, it2 = first + q;
 			for (; it1 != first + q && it2 != first + r; ) {
@@ -34,34 +34,23 @@ namespace algo {
 				first[i] = arr[i];
 		}
 
-		template<class _RandomAccessIter, class _Comparator, class _Elem>
-		static void merge_sort(std::vector<_Elem>& arr, _RandomAccessIter first,
-			_Comparator comp, int p, int r) {
-			if (p < r - 1) {
-				merge_sort(arr, first, comp, p, p + (r - p) / 2);
-				merge_sort(arr, first, comp, p + (r - p) / 2, r);
-				merge(arr, first, comp, p, p + (r - p) / 2, r);
-			}
-		}
-
 	public:
 		template <class _RandomAccessIter>
 		static void sort(_RandomAccessIter first, _RandomAccessIter last) {
 			sort(first, last, std::less< std::iterator_traits<_RandomAccessIter>::value_type >());
 		}
 
-		template <class _RandomAccessIter, class _Comparator>
+		template <class _RandomAccessIter, class _Comparator> 
 		static void sort(_RandomAccessIter first, _RandomAccessIter last, _Comparator comp) {
 			typedef std::iterator_traits<_RandomAccessIter>::value_type Elem;
 			int n = last - first;
 			std::vector<Elem> stack(n);
-			merge_sort(stack, first, comp, 0, n);
+			for (int sz = 1; sz < n; sz *= 2)
+				for (int lo = 0; lo < n - sz; lo += 2 * sz)
+					merge(stack, first, comp,  lo, lo + sz, std::min(lo + 2 * sz, n));
 		}
-
-
 	};
 }
 
-#endif // !_MERGE_SORT_
-
+#endif // !_ALGORITHM_MERGE_SORT_BU_
 

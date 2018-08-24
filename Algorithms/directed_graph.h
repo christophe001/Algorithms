@@ -27,6 +27,7 @@ namespace algo {
 		const int degree(int i) const { return m_degree[i]; }
 		Digraph reverse();
 		std::string toString() const;
+		bool isBipartite() const;
 	};
 }
 

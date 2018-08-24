@@ -1,11 +1,11 @@
-#ifndef _ALGORITHM_SELECTION_SORT_
-#define _ALGORITHM_SELECTION_SORT_
+#ifndef _ALGORITHM_BUBBLE_SORT_
+#define _ALGORITHM_BUBBLE_SORT_
 
 namespace algo {
-	class SelectionSort {
+	class BubbleSort {
 	private:
-		SelectionSort() {}
-		~SelectionSort() {}
+		BubbleSort() {}
+		~BubbleSort() {}
 
 	public:
 		template <class _RandomAccessIter>
@@ -15,17 +15,20 @@ namespace algo {
 
 		template <class _RandomAccessIter, class _Comparator>
 		static void sort(_RandomAccessIter first, _RandomAccessIter last, _Comparator comp) {
-			for (auto i = first; i != last; i++) {
-				auto k = i;
-				for (auto j = i + 1; j != last; j++) {
-					if (comp(*j, *k))
-						k = j;
+			bool swapped;
+			for (auto i = last - 1; i != first; i--) {
+				swapped = false;
+				for (auto j = first; j != i; j++) {
+					if (comp(*(j+1), *j)) {
+						std::swap(*j, *(j + 1));
+						swapped = true;
+					}
 				}
-				std::swap(*k, *i);
+				if (!swapped) break;
 			}
 		}
 	};
 }
 
-#endif // !_ALGORITHM_SELECTION_SORT_
+#endif // !_ALGORITHM_BUBBLE_SORT_
 
